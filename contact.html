@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Yehezkiel Ruben - Portfolio</title>
+    <style>
+        /* Contact Section */
+        .contact-section {
+            padding: 5rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-container {
+            padding: 3rem;
+            border-radius: 20px;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .contact-header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 1rem;
+        }
+
+        .contact-header p {
+            font-size: 1.2rem;
+            color: #4a5568;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-form {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+        }
+
+        .contact-form h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #1a202c;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1rem 0.9rem 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            color: #1a202c;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+        }
+
+        .form-group i {
+            position: absolute;
+            left: 1rem;
+            top: 2.5rem;
+            color: #4a5568;
+            transition: color 0.3s ease;
+        }
+
+        .form-group input:focus+i,
+        .form-group textarea:focus+i {
+            color: #4f46e5;
+        }
+
+        .contact-form .cta-btn {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-info h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #1a202c;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: #4f46e5;
+            background: rgba(79, 70, 229, 0.15);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .info-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: #1a202c;
+        }
+
+        .info-item p,
+        .info-item a {
+            color: #4a5568;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-item a:hover {
+            color: #4f46e5;
+        }
+
+        .social-links h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+            color: #1a202c;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(79, 70, 229, 0.1);
+            color: #4f46e5;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: #4f46e5;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            padding: 3rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+
+        .modal-icon {
+            font-size: 5rem;
+            color: #10b981;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-icon i {
+            animation: popIn 0.5s ease;
+        }
+
+        .modal-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1a202c;
+        }
+
+        .modal-content p {
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 2rem;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.8rem;
+            color: #4a5568;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: #ef4444;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .info-card {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .contact-header p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-section {
+                padding: 3rem 1rem;
+            }
+
+            .contact-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .info-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes popIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            70% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="glass-effect">
+        <div class="nav-container">
+            <div class="logo">YR</div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="projects.html"><i class="fas fa-code"></i> Projects</a></li>
+                <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="contact-container glass-effect">
+                <div class="contact-header">
+                    <h1>Get In Touch</h1>
+                    <p>I'm excited to connect and discuss internship opportunities or potential collaborations.</p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-form">
+                        <h2>Send Me a Message</h2>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Enter your name">
+                                <i class="fas fa-user"></i>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required placeholder="Enter your email">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required
+                                    placeholder="What is this regarding?">
+                                <i class="fas fa-tag"></i>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" rows="5" required
+                                    placeholder="Type your message here..."></textarea>
+                                <i class="fas fa-comment"></i>
+                            </div>
+
+                            <button type="submit" class="cta-btn">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="contact-info">
+                        <h2>Contact Information</h2>
+                        <div class="info-card">
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h3>Email</h3>
+                                    <a href="mailto:yehezkiel.ruben@example.com">yehezkiel.ruben@example.com</a>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <i class="fab fa-linkedin"></i>
+                                <div>
+                                    <h3>LinkedIn</h3>
+                                    <a href="https://www.linkedin.com/in/yehezkiel-ruben"
+                                        target="_blank">linkedin.com/in/yehezkiel-ruben</a>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <i class="fab fa-github"></i>
+                                <div>
+                                    <h3>GitHub</h3>
+                                    <a href="https://github.com/yehezkiel" target="_blank">github.com/yehezkiel</a>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h3>Location</h3>
+                                    <p>Jakarta, Indonesia</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <h3>Connect With Me</h3>
+                            <div class="social-icons">
+                                <a href="https://www.linkedin.com/in/yehezkiel-ruben" target="_blank"><i
+                                        class="fab fa-linkedin"></i></a>
+                                <a href="https://github.com/yehezkiel" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="https://twitter.com/yehezkiel" target="_blank"><i
+                                        class="fab fa-twitter"></i></a>
+                                <a href="https://instagram.com/yehezkiel" target="_blank"><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-effect">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">YR</div>
+                <p>Yehezkiel Ruben<br>Web Developer & Computer Science Student</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> yehezkiel.ruben@example.com</li>
+                    <li><i class="fab fa-linkedin"></i> linkedin.com/in/yehezkiel</li>
+                    <li><i class="fab fa-github"></i> github.com/yehezkiel</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Yehezkiel Ruben. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/yehezkiel-ruben" target="_blank"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/yehezkiel" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/yehezkiel" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/yehezkiel" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content glass-effect">
+            <span class="close-modal">&times;</span>
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Message Sent Successfully!</h2>
+            <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
+            <button class="cta-btn" id="closeModalBtn">OK</button>
+        </div>
+    </div>
+
+    <script>
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Show success modal
+            document.getElementById('successModal').style.display = 'block';
+
+            // Reset form
+            this.reset();
+        });
+
+        // Close modal functionality
+        document.querySelector('.close-modal').addEventListener('click', function () {
+            document.getElementById('successModal').style.display = 'none';
+        });
+
+        document.getElementById('closeModalBtn').addEventListener('click', function () {
+            document.getElementById('successModal').style.display = 'none';
+        });
+
+        // Close modal if clicked outside
+        window.addEventListener('click', function (e) {
+            const modal = document.getElementById('successModal');
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

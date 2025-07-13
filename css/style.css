@@ -1,0 +1,588 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+  color: #2d3748;
+  background: linear-gradient(135deg, #edf2f7 0%, #e6fffa 100%); /* Latar gradien halus untuk efek glass */
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Base Class */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.15); /* Transparansi rendah untuk kesan profesional */
+  backdrop-filter: blur(8px); /* Blur halus */
+  border-radius: 12px; /* Sudut bulat lembut */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan ringan */
+  border: 1px solid rgba(255, 255, 255, 0.25); /* Garis tepi halus */
+}
+
+/* Navigation */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 0;
+}
+
+nav.glass-effect {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+
+.logo {
+  color: #1a202c;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #38a169;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links li {
+  margin: 0 1.5rem;
+}
+
+.nav-links a {
+  color: #2d3748;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background-color: #38a169;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #38a169;
+  transform: translateY(-2px);
+}
+
+/* Hero Section (index.html) */
+.hero {
+  padding: 6rem 2rem;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero.glass-effect {
+  max-width: 800px;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1a202c;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #4a5568;
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.hero .cta-button {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  background: rgba(56, 161, 105, 0.2);
+  backdrop-filter: blur(5px);
+  color: #1a202c;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero .cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* About Summary (index.html) */
+.about-summary {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.about-summary.glass-effect {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.about-summary h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1.5rem;
+}
+
+.about-summary p {
+  font-size: 1.1rem;
+  color: #4a5568;
+  margin: 0 auto 1.5rem;
+  max-width: 600px;
+}
+
+.about-summary .link {
+  color: #2b6cb0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+}
+
+.about-summary .link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #38a169;
+  transition: width 0.3s ease;
+}
+
+.about-summary .link:hover::after {
+  width: 100%;
+}
+
+.about-summary .link:hover {
+  color: #38a169;
+}
+
+/* Featured Projects (index.html) & Projects Section (projects.html) */
+.featured-projects, .projects-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.featured-projects h2, .projects-section h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.projects-section p {
+  font-size: 1.1rem;
+  color: #4a5568;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.project-grid, .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  animation: fadeInUp 1.4s ease-out;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-card .project-img, .project-card .project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-img, .project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-card h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  color: #1a202c;
+}
+
+.project-card p {
+  padding: 0 1.5rem 1rem;
+  color: #4a5568;
+  font-size: 1rem;
+}
+
+.project-card .link {
+  display: inline-block;
+  margin: 0 1.5rem 1.5rem;
+  color: #2b6cb0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.project-card .link:hover {
+  color: #38a169;
+}
+
+/* About Section (about.html) */
+.about-section {
+  padding: 4rem 2rem;
+}
+
+.container.glass-effect {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+  animation: fadeInUp 1.4s ease-out;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+}
+
+.about-text h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+.skills-list {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.skills-list li {
+  font-size: 1rem;
+  color: #4a5568;
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.skills-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #38a169;
+  font-size: 1.2rem;
+}
+
+/* Contact Section (contact.html) */
+main {
+  min-height: calc(100vh - 200px);
+}
+
+.contact-section {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contact-section.glass-effect {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.contact-section h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.contact-section p {
+  font-size: 1.2rem;
+  color: #4a5568;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.contact-info {
+  max-width: 500px;
+  margin: 0 auto;
+  animation: fadeInUp 1.4s ease-out;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.contact-info a {
+  color: #2b6cb0;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.contact-info a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #38a169;
+  transition: width 0.3s ease;
+}
+
+.contact-info a:hover::after {
+  width: 100%;
+}
+
+.contact-info a:hover {
+  color: #38a169;
+}
+
+/* Footer */
+footer {
+  background: rgba(45, 55, 72, 0.7);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e2e8f0;
+  text-align: center;
+  padding: 2rem;
+}
+
+footer p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+footer a {
+  color: #38a169;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #68d391;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    padding: 0.8rem 1rem;
+  }
+
+  nav.glass-effect {
+    flex-direction: column;
+    padding: 0.8rem 1rem;
+  }
+
+  .nav-links {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links li {
+    margin: 0.5rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .about-summary h2, .featured-projects h2, .projects-section h2, .about-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .project-grid, .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .contact-section h1 {
+    font-size: 2rem;
+  }
+
+  .contact-section p {
+    font-size: 1.1rem;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
+  }
+
+  .hero, .about-summary, .featured-projects, .projects-section, .about-section, .contact-section {
+    padding: 3rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero .cta-button {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.9rem;
+  }
+
+  .project-card .project-img, .project-card .project-image {
+    height: 180px;
+  }
+
+  .about-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  .about-text h3 {
+    font-size: 1.4rem;
+  }
+
+  .profile-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .contact-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact-info p {
+    font-size: 1rem;
+  }
+}
