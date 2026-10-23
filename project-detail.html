@@ -646,69 +646,65 @@
 
         const projectsData = [
             {
-                id: 'pediafood-japan',
-                name: 'PediaFood Japan – Cross-Border E-Commerce',
-                subtitle: 'Platform E-Commerce B2C Produk Halal & Asia Lintas Negara (Jepang)',
-                description: 'Platform e-commerce B2C berskala internasional yang melayani pengiriman produk di seluruh prefektur Jepang dengan sistem zonasi pengiriman logistik dinamis dan integrasi API pihak ketiga.',
-                overview: 'PediaFood Japan adalah platform e-commerce yang dirancang untuk melayani pasar cross-border di Jepang. Sistem ini mengintegrasikan Zip Cloud API untuk auto-complete alamat Jepang instan berdasarkan 7 digit kode pos, memvalidasi prefektur, kota, dan distrik secara real-time. Memiliki mesin perhitungan ongkos kirim dinamis yang memisahkan regulasi logistik muatan kering (dry cargo) dan makanan beku/chilled berdasarkan zonasi pulau/prefektur. Dilengkapi alur autentikasi Google OAuth 2.0 untuk checkout cepat, sinkronisasi cart multi-device, serta diamankan menggunakan Cloudflare WAF dan rate limiting untuk mitigasi scraping serta optimasi CDN traffic lintas negara.',
-                technologies: ['PHP', 'MySQL', 'Cloudflare WAF', 'Zip Cloud API', 'Google OAuth 2.0', 'REST API', 'JavaScript', 'Bootstrap'],
+                id: 'cctv-access-control',
+                name: 'Supervisi & Implementasi Sistem Keamanan Korporat',
+                subtitle: 'Supervisi Teknis (Technical Site PIC) CCTV & Biometric Access Control Door',
+                description: 'Memimpin survei teknis lapangan, penyusunan Bill of Quantity (BoQ), pengawasan instalasi vendor, verifikasi fungsi sensor, dan penyusunan Berita Acara Serah Terima (BAST).',
+                overview: 'Sebagai Person in Charge (PIC) teknis lapangan, bertanggung jawab penuh dalam mengawasi pekerjaan vendor dan subkontraktor pada instalasi sistem keamanan korporat di berbagai fasilitas klien bisnis. Lingkup kerja meliputi survei pemetaan titik kamera dan perangkat akses, perhitungan kebutuhan material (BoQ), penyusunan Minutes of Meeting (MoM), inspeksi penarikan kabel UTP/koaksial dan pipa konduit, serta pengujian Quality Control (QC) untuk fungsi sensor RFID, pemindai sidik jari, pengenalan wajah (face recognition), dan perekaman NVR/DVR sebelum serah terima pekerjaan (BAST).',
+                technologies: ['CCTV (IP Camera & Analog)', 'DVR / NVR', 'Access Control Door (RFID, Fingerprint, Face Recognition)', 'Technical Site Survey', 'Bill of Quantity (BoQ)', 'Quality Control (QC)', 'Berita Acara Serah Terima (BAST)'],
                 github: 'https://github.com/Yehezkie',
                 screenshots: [
-                    { src: 'assets/pediafood/pediafood-logo.png', caption: 'Logo Resmi & Identitas Platform PediaFood Japan' }
+                    { src: 'assets/cctv-access/access-door-biometric.jpg', caption: 'Perangkat Terminal Biometrik & Access Control Door' },
+                    { src: 'assets/cctv-access/cctv-poe-switch.png', caption: 'Infrastruktur PoE Switch & Jaringan CCTV Hikvision' }
+                ]
+            },
+            {
+                id: 'pediafood-japan',
+                name: 'PediaFood - Cross-Border E-Commerce Platform (Jepang)',
+                subtitle: 'Platform E-Commerce B2C Produk Halal & Asia Lintas Negara (Jepang)',
+                description: 'Platform e-commerce grosir & ritel untuk pasar Jepang end-to-end: integrasi Zip Cloud API kode pos 7-digit Jepang, kalkulasi ongkos kirim dinamis, login Google OAuth 2.0, dan Cloudflare WAF.',
+                overview: 'Membangun dan mengelola platform e-commerce grosir & ritel untuk pasar Jepang secara menyeluruh: pemodelan basis data, alur transaksi, manajemen inventori, dan pemeliharaan server. Mengintegrasikan sistem auto-complete kode pos 7-digit Jepang (Zip Cloud API) untuk pengisian alamat otomatis yang akurat. Menerapkan mesin perhitungan ongkos kirim dinamis berbasis bobot, kubikasi, dan kategori temperatur kargo (kargo kering vs kargo beku/chilled) sesuai regulasi logistik lokal Jepang. Mengimplementasikan autentikasi Google OAuth 2.0 dengan sinkronisasi keranjang belanja multi-device serta konfigurasi Cloudflare WAF untuk keamanan dan optimasi CDN lintas negara.',
+                technologies: ['PHP', 'MySQL', 'JavaScript', 'Google OAuth 2.0', 'Cloudflare WAF', 'Zip Cloud API', 'Linux Server', 'Bootstrap'],
+                github: 'https://github.com/Yehezkie',
+                screenshots: [
+                    { src: 'assets/pediafood/pediafood-logo.png', caption: 'Logo Resmi & Identitas Platform E-Commerce PediaFood Japan' }
                 ]
             },
             {
                 id: 'crm-rfq',
-                name: 'Sistem CRM & Manajemen Penawaran (RFQ)',
-                subtitle: 'Aplikasi Internal Otomatisasi Alur Penawaran Harga & Audit Penjualan',
-                description: 'Sistem internal enterprise untuk mengelola alur permintaan penawaran harga (Request for Quotation / RFQ), isolasi basis data pelanggan per sales, validasi diskon bertingkat, dan audit log pelacakan dokumen.',
-                overview: 'Sistem CRM RFQ dibangun untuk mendisiplinkan operasional penawaran harga tim sales kepada klien perusahaan. Fitur mencakup manajemen portofolio pelanggan dengan pemisahan database per representatif sales, generator dokumen penawaran harga otomatis dengan kalkulasi margin/diskon, alur persetujuan validasi berjenjang (approval workflow) jika diskon melewati batas kewenangan, serta audit log lengkap untuk memantau setiap riwayat pembuatan, modifikasi, dan status persetujuan dokumen quotation secara transparan.',
-                technologies: ['PHP', 'MySQL', 'Audit Trail', 'Workflow Approval', 'HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
+                name: 'CRM & Request for Quotation (RFQ) System',
+                subtitle: 'Sistem Web Otomatisasi Alur Penawaran Harga & Manajemen Database Sales',
+                description: 'Sistem CRM RFQ untuk pengelolaan alur penawaran harga dari tim Sales ke Admin dan Leader dengan pembatasan hak akses, validasi diskon bertingkat, dan audit trail.',
+                overview: 'Membangun sistem web CRM & Request for Quotation (RFQ) untuk mendisiplinkan operasional penawaran harga dari tim Sales kepada klien perusahaan. Menerapkan pembatasan hak akses data yang ketat di mana setiap Sales hanya dapat melihat dan mengelola database klien serta request penawaran miliknya. Menyediakan form kalkulasi harga terstruktur mencakup HPP, margin, ongkos kirim, dan biaya subkontraktor. Dilengkapi alur validasi persetujuan diskon berjenjang (approval workflow), audit trail lengkap untuk memantau setiap riwayat perubahan harga, serta generator PDF penawaran dwibahasa (Indonesia-Jepang) dengan proteksi informasi margin internal.',
+                technologies: ['Laravel 11', 'MySQL', 'Tailwind CSS', 'Alpine.js', 'DomPDF', 'AJAX', 'Workflow Approval', 'Audit Trail'],
                 github: 'https://github.com/Yehezkie',
                 screenshots: [
-                    { src: 'assets/crm/quotation-rfq.png', caption: 'Pratinjau Format Dokumen Penawaran Harga (Quotation RFQ)' }
+                    { src: 'assets/crm/quotation-rfq.png', caption: 'Format Dokumen Resmi Penawaran Harga (Quotation RFQ)' }
                 ]
             },
             {
-                id: 'inventaris-aset',
-                name: 'Sistem Inventaris Aset Multi-Cabang',
-                subtitle: 'Aplikasi Mobile Manajemen Aset Kantor Berbasis Offline-First',
-                description: 'Aplikasi mobile untuk pencatatan, inspeksi fisik, dan pelacakan mutasi aset IT kantor lintas lokasi dengan sinkronisasi database offline-first.',
-                overview: 'Sistem Manajemen Inventaris Aset Multi-Cabang mengatasi kendala pencatatan aset di lokasi dengan koneksi internet terbatas. Dibangun menggunakan Flutter dengan penyimpanan lokal SQLite, memungkinkan staf IT melakukan inventarisasi aset, pemindaian label barang, verifikasi kondisi perangkat, dan pengesahan Berita Acara Serah Terima (BAST) tanpa ketergantungan sinyal internet secara terus-menerus. Saat perangkat terhubung ke internet, sinkronisasi otomatis akan menyelaraskan data lokal ke basis data cloud server secara aman.',
-                technologies: ['Flutter', 'Dart', 'SQLite', 'Offline-First Architecture', 'REST API', 'JSON'],
+                id: 'offline-inventory',
+                name: 'Offline-First IT Asset Management & Inventory System',
+                subtitle: 'Aplikasi Mobile Manajemen Aset IT Berbasis Offline-First',
+                description: 'Aplikasi mobile untuk pencatatan, inspeksi fisik, dan pelacakan mutasi aset IT kantor lintas lokasi dengan sinkronisasi database offline-first menggunakan SQLite lokal.',
+                overview: 'Merancang dan membangun aplikasi mobile manajemen aset IT dengan arsitektur Offline-First menggunakan SQLite lokal untuk mempermudah audit fisik perangkat di gudang dan lokasi lapangan tanpa ketergantungan koneksi internet. Mengembangkan fitur pemrosesan data massal (bulk selection, bulk delete, filter multi-kategori), pencatatan nomor seri perangkat, verifikasi kondisi fisik, dan modul parser Excel untuk sinkronisasi data aset massal secara cepat dan akurat.',
+                technologies: ['Flutter', 'Dart', 'SQLite Lokal', 'Offline-First Architecture', 'Excel Data Parsing', 'Android'],
                 github: 'https://github.com/Yehezkie/Inventaris_multi-cabang',
                 screenshots: [
                     { src: 'assets/inventaris/bast-inventaris.png', caption: 'Pratinjau Aktivitas & Pengesahan BAST Inventaris Aset' }
                 ]
             },
             {
-                id: 'digital-library',
-                name: 'Perpustakaan Digital SMPN 7 Bekasi',
-                subtitle: 'Sistem Manajemen Katalog & Sirkulasi Perpustakaan Sekolah',
-                description: 'Aplikasi manajemen perpustakaan sekolah dengan klasifikasi buku (DDC), pengelolaan data anggota, pelacakan peminjaman 3 hari, pengingat WhatsApp, dan dasbor dengan statistik serta ekspor CSV.',
-                overview: 'Sistem Perpustakaan Digital Sekolah adalah solusi otomatis dan efisien untuk manajemen perpustakaan sekolah. Fitur termasuk pengelolaan koleksi buku dengan Klasifikasi Desimal Dewey (DDC), pelacakan salinan unik, dan pengelolaan data anggota dengan verifikasi data siswa. Sistem ini mendukung batas peminjaman 3 hari, pelacakan sirkulasi secara real-time, dan pengingat pengembalian otomatis melalui integrasi WhatsApp API. Dilengkapi dengan dasbor intuitif dan laporan aktivitas perpustakaan menggunakan PHP, MySQL, Bootstrap, dan Chart.js.',
-                technologies: ['PHP', 'MySQL', 'WhatsApp API', 'Dewey Decimal Classification (DDC)', 'HTML', 'CSS', 'JavaScript', 'Bootstrap'],
-                github: 'https://github.com/Yehezkie/perpustakaan_digital',
+                id: 'server-network-security',
+                name: 'Infrastruktur Jaringan, Server Hardening & Security Handling',
+                subtitle: 'Pemeliharaan Infrastruktur LAN, Hardening Server & Mitigasi Keamanan Siber',
+                description: 'Penanganan investigasi forensik dan pembersihan script berbahaya (malware PHP), konfigurasi Cloudflare Edge Security (WAF rules, SSL Full Strict), serta pengkabelan LAN.',
+                overview: 'Melakukan investigasi forensik dan pembersihan tuntas injeksi script berbahaya (malware/backdoor PHP) pada lingkungan server produksi serta menutup celah keamanan sistem. Mengonfigurasi Cloudflare Edge Security mencakup custom WAF rules, mitigasi bot, dan SSL/TLS Full Strict untuk menjamin ketersediaan layanan website dengan zero-downtime. Di sisi infrastruktur lokal, melakukan perapihan dan terminasi kabel LAN (crimping RJ-45) pada patch panel serta pemeliharaan konektivitas jaringan kantor.',
+                technologies: ['LAN Networking', 'Crimping UTP RJ-45', 'Cloudflare WAF', 'Linux Server', 'cPanel Hosting', 'PHP Malware Cleanup', 'SSL/TLS Full Strict'],
+                github: 'https://github.com/Yehezkie',
                 screenshots: [
-                    { src: 'assets/perpustakaan-digital/dahboard.png', caption: 'Dasbor Statistik Perpustakaan' },
-                    { src: 'assets/perpustakaan-digital/tampilan login.jpg', caption: 'Halaman Login Sistem' },
-                    { src: 'assets/perpustakaan-digital/Master Data - Data SIswa.png', caption: 'Master Data Siswa' },
-                    { src: 'assets/perpustakaan-digital/Master Data - Data Buku.png', caption: 'Master Data Buku (Klasifikasi DDC)' },
-                    { src: 'assets/perpustakaan-digital/Transaksi.png', caption: 'Menu Transaksi Sirkulasi Peminjaman' },
-                    { src: 'assets/perpustakaan-digital/Laporan.png', caption: 'Rekapitulasi Laporan & Ekspor CSV' }
-                ]
-            },
-            {
-                id: 'Expense-Tracker',
-                name: 'Aplikasi Web Pelacak Pengeluaran',
-                subtitle: 'Alat Manajemen Arus Kas Keuangan Sederhana dan Responsif',
-                description: 'Aplikasi berbasis web yang dirancang untuk membantu pengguna melacak pendapatan dan pengeluaran, mengelola transaksi, dan mengekspor data keuangan dalam format CSV.',
-                overview: 'Aplikasi Web Pelacak Pengeluaran adalah alat manajemen arus kas pribadi yang bersih dan responsif. Memungkinkan pengguna mencatat transaksi pendapatan dan pengeluaran secara real-time, menampilkan saldo dinamis, serta mengkategorikan pos pengeluaran harian. Sistem ini dilengkapi fungsionalitas CRUD lengkap serta ekspor data ke file CSV untuk analisis anggaran lanjutan.',
-                technologies: ['PHP', 'MySQL', 'JavaScript', 'HTML5', 'CSS3', 'Bootstrap'],
-                github: 'https://github.com/Yehezkie/Expanse_Tracker_Web.git',
-                screenshots: [
-                    { src: 'assets/expense tracker/Halaman Utama.png', caption: 'Halaman Utama & Ringkasan Saldo' },
-                    { src: 'assets/expense tracker/Halaman transaksi.png', caption: 'Halaman Manajemen Transaksi' }
+                    { src: 'assets/security-server/server-infrastructure.jpg', caption: 'Infrastruktur Server & Hardening Sistem' },
+                    { src: 'assets/security-server/storage-surveillance.jpg', caption: 'Media Penyimpanan & Harddisk Surveillance' }
                 ]
             }
         ];

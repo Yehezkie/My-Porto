@@ -755,8 +755,17 @@
             </div>
             <div class="about-content animate">
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80"
-                        alt="Yehezkiel Ruben Sedang Coding" loading="lazy">
+                    <div class="glass-card" style="text-align: center; padding: 30px;">
+                        <img src="assets/profile.jpeg" alt="Yehezkiel Ruben" style="width: 220px; height: 220px; border-radius: 50%; object-fit: cover; border: 4px solid var(--secondary); margin-bottom: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.15);">
+                        <h3 style="color: var(--dark); font-size: 1.4rem; margin-bottom: 5px;">Yehezkiel Ruben</h3>
+                        <p style="color: var(--primary); font-weight: 600; font-size: 1rem; margin-bottom: 15px;">IT Support & System Specialist</p>
+                        <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                            <span class="tech-tag" style="font-size: 0.85rem;"><i class="fas fa-network-wired"></i> BNSP Network Admin</span>
+                            <span class="tech-tag" style="font-size: 0.85rem;"><i class="fas fa-video"></i> PIC CCTV & Access Door</span>
+                            <span class="tech-tag" style="font-size: 0.85rem;"><i class="fas fa-shield-alt"></i> Server Hardening</span>
+                            <span class="tech-tag" style="font-size: 0.85rem;"><i class="fas fa-graduation-cap"></i> S1 Informatika UBSI</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-text">
                     <p>Sebagai <span class="highlight">lulusan S1 Informatika Universitas Bina Sarana Informatika</span> (Lulus Sidang Skripsi September 2026, Wisuda November 2026), saya berfokus pada <span class="highlight">IT Support, Infrastruktur Jaringan LAN, dan Supervisi Sistem Keamanan Fisik</span>, didukung kemampuan pengembangan sistem web dan mobile.</p>
@@ -901,35 +910,35 @@
 
     <script>
         const projects = {
+            'cctv-access-control': {
+                title: 'Supervisi & Implementasi Sistem Keamanan Korporat',
+                description: 'Supervisi teknis (PIC) instalasi CCTV (Analog, IP Camera, DVR/NVR) dan Biometric Access Control Door (RFID, Fingerprint, Face Recognition). Mencakup survei lapangan, BoQ, pengawasan vendor, verifikasi uji fungsi sensor, dan BAST.',
+                image: 'assets/cctv-access/access-door-biometric.jpg',
+                tags: ['CCTV & NVR', 'Access Control Door', 'BoQ & MoM', 'QC Checklist', 'BAST']
+            },
             'pediafood-japan': {
-                title: 'PediaFood Japan – Cross-Border E-Commerce',
-                description: 'Platform e-commerce B2C lintas negara (PHP, MySQL, Cloudflare). Dilengkapi integrasi Zip Cloud API kode pos 7 digit Jepang, perhitungan ongkir dinamis (muatan kering vs beku), autentikasi Google OAuth 2.0, dan WAF Cloudflare.',
+                title: 'PediaFood - Cross-Border E-Commerce Platform (Jepang)',
+                description: 'Membangun dan mengelola platform e-commerce grosir & ritel kargo Jepang. Integrasi Zip Cloud API kode pos 7-digit Jepang, kalkulasi ongkos kirim dinamis (kargo kering vs beku/chilled), login Google OAuth 2.0, dan proteksi Cloudflare WAF.',
                 image: 'assets/pediafood/pediafood-logo.png',
-                tags: ['PHP', 'MySQL', 'Cloudflare WAF', 'REST API', 'JavaScript']
+                tags: ['PHP', 'MySQL', 'Google OAuth 2.0', 'Cloudflare WAF', 'Zip Cloud API', 'Linux']
             },
             'crm-rfq': {
-                title: 'Sistem CRM & Manajemen Penawaran (RFQ)',
-                description: 'Aplikasi internal untuk pengelolaan penawaran harga sales, manajemen basis data pelanggan, alur validasi persetujuan diskon berjenjang, dan audit log pelacakan riwayat dokumen.',
+                title: 'CRM & Request for Quotation (RFQ) System',
+                description: 'Sistem internal enterprise alur penawaran harga sales ke admin/leader. Isolasi database pelanggan per sales, form kalkulasi HPP & margin, alur persetujuan validasi diskon berjenjang, audit trail, serta generator PDF dwibahasa (ID-JP).',
                 image: 'assets/crm/quotation-rfq.png',
-                tags: ['PHP', 'MySQL', 'Workflow Approval', 'Audit Trail', 'Bootstrap']
+                tags: ['Laravel 11', 'MySQL', 'Workflow Approval', 'Audit Trail', 'Tailwind CSS', 'DomPDF']
             },
-            'inventaris-aset': {
-                title: 'Sistem Inventaris Aset Multi-Cabang',
-                description: 'Aplikasi mobile inventaris perangkat IT kantor dengan arsitektur offline-first menggunakan SQLite lokal, sinkronisasi data cloud saat online, dan pelacakan riwayat mutasi aset.',
+            'offline-inventory': {
+                title: 'Offline-First IT Asset Management & Inventory System',
+                description: 'Aplikasi mobile manajemen aset IT dengan arsitektur Offline-First menggunakan SQLite lokal untuk audit fisik perangkat di gudang tanpa internet, bulk actions, dan modul parser Excel untuk sinkronisasi massal.',
                 image: 'assets/inventaris/bast-inventaris.png',
-                tags: ['Flutter', 'Dart', 'SQLite', 'Offline-First', 'REST API']
+                tags: ['Flutter', 'Dart', 'SQLite Lokal', 'Offline-First', 'Excel Parsing', 'Android']
             },
-            'digital-library': {
-                title: 'Perpustakaan Digital SMPN 7 Bekasi',
-                description: 'Aplikasi manajemen perpustakaan sekolah dengan klasifikasi buku Dewey Decimal Classification (DDC), manajemen data anggota, pelacakan peminjaman, pengingat WhatsApp API, dan ekspor CSV.',
-                image: 'assets/perpustakaan-digital/dahboard.png',
-                tags: ['PHP', 'MySQL', 'WhatsApp API', 'DDC', 'Bootstrap']
-            },
-            'Expense-Tracker': {
-                title: 'Aplikasi Web Pelacak Pengeluaran',
-                description: 'Aplikasi web pencatatan keuangan pribadi untuk monitoring pendapatan dan pengeluaran secara dinamis, rekapitulasi saldo, serta ekspor data riwayat transaksi ke CSV.',
-                image: 'assets/expense tracker/Halaman Utama.png',
-                tags: ['PHP', 'MySQL', 'JavaScript', 'HTML5', 'CSS3']
+            'server-network-security': {
+                title: 'Infrastruktur Jaringan, Server Hardening & Security Handling',
+                description: 'Investigasi forensik dan pembersihan injeksi malware PHP pada server, konfigurasi Cloudflare Edge Security (custom WAF rules, SSL Full Strict, bot mitigation), pengkabelan LAN, serta pemeliharaan server dengan zero-downtime.',
+                image: 'assets/security-server/server-infrastructure.jpg',
+                tags: ['LAN Networking', 'Cloudflare WAF', 'Linux Server', 'Malware Cleanup', 'cPanel']
             }
         };
 
