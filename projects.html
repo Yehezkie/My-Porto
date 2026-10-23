@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Proyek portofolio oleh Yehezkiel Ruben, menampilkan keterampilan pengembangan web dan teknologi yang digunakan.">
-    <title>Proyek - Yehezkiel Ruben</title>
+    <meta name="description" content="Koleksi proyek teknologi Yehezkiel Ruben: E-Commerce Cross-Border PediaFood Japan, CRM RFQ, Inventaris Aset Multi-Cabang, dan Perpustakaan Digital.">
+    <title>Proyek - Yehezkiel Ruben (IT Support & Web Developer)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -492,9 +491,9 @@
             <div class="footer-content glass-card">
                 <div class="footer-brand">
                     <a href="index.html" class="logo" aria-label="Yehezkiel Ruben Logo">YR</a>
-                    <p>Mahasiswa Informatika yang bersemangat menjelajahi pengembangan web.</p>
+                    <p>IT Support & System Specialist | Lulusan S1 Informatika Universitas Bina Sarana Informatika.</p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/yehezkiel-ruben-0928a22a8" class="social-link"
+                        <a href="https://www.linkedin.com/in/yehezkiel-ruben-857508249" class="social-link"
                             data-tooltip="LinkedIn" target="_blank" aria-label="LinkedIn"><i
                                 class="fab fa-linkedin"></i></a>
                         <a href="https://github.com/Yehezkie" class="social-link" data-tooltip="GitHub" target="_blank"
@@ -533,20 +532,40 @@
 
         const projectsData = [
             {
+                id: 'pediafood-japan',
+                name: 'PediaFood Japan – Cross-Border E-Commerce',
+                description: 'Platform e-commerce B2C lintas negara (PHP, MySQL, Cloudflare). Dilengkapi integrasi Zip Cloud API kode pos 7 digit Jepang, perhitungan ongkir dinamis (muatan kering vs beku), autentikasi Google OAuth 2.0, dan WAF Cloudflare.',
+                thumbnail: 'assets/pediafood/pediafood-logo.png',
+                github: 'https://github.com/Yehezkie'
+            },
+            {
+                id: 'crm-rfq',
+                name: 'Sistem CRM & Manajemen Penawaran (RFQ)',
+                description: 'Aplikasi internal untuk pengelolaan penawaran harga sales, manajemen basis data pelanggan, alur validasi persetujuan diskon berjenjang, dan audit log pelacakan riwayat dokumen.',
+                thumbnail: 'assets/crm/quotation-rfq.png',
+                github: 'https://github.com/Yehezkie'
+            },
+            {
+                id: 'inventaris-aset',
+                name: 'Sistem Inventaris Aset Multi-Cabang',
+                description: 'Aplikasi mobile inventaris perangkat IT kantor dengan arsitektur offline-first menggunakan SQLite lokal, sinkronisasi data cloud saat online, dan pelacakan riwayat mutasi aset.',
+                thumbnail: 'assets/inventaris/bast-inventaris.png',
+                github: 'https://github.com/Yehezkie/Inventaris_multi-cabang'
+            },
+            {
                 id: 'digital-library',
-                name: 'Perpustakaan Digital',
-                description: 'Aplikasi manajemen perpustakaan sekolah dengan klasifikasi buku (DDC), pengelolaan data anggota, pelacakan peminjaman 3 hari, pengingat WhatsApp, dan dasbor dengan statistik serta ekspor CSV.',
+                name: 'Perpustakaan Digital SMPN 7 Bekasi',
+                description: 'Aplikasi manajemen perpustakaan sekolah dengan klasifikasi buku Dewey Decimal Classification (DDC), manajemen data anggota, pelacakan peminjaman 3 hari, pengingat WhatsApp API, dan ekspor CSV.',
                 thumbnail: 'assets/perpustakaan-digital/dahboard.png',
                 github: 'https://github.com/Yehezkie/perpustakaan_digital'
             },
             {
                 id: 'Expense-Tracker',
                 name: 'Aplikasi Web Pelacak Pengeluaran',
-                description: 'Aplikasi berbasis web untuk mengelola keuangan pribadi dengan melacak pendapatan dan pengeluaran, dengan fitur untuk menambah, menghapus, dan mengekspor transaksi ke CSV.',
+                description: 'Aplikasi web pencatatan keuangan pribadi untuk monitoring pendapatan dan pengeluaran secara dinamis, rekapitulasi saldo, serta ekspor data riwayat transaksi ke CSV.',
                 thumbnail: 'assets/expense tracker/Halaman Utama.png',
                 github: 'https://github.com/Yehezkie/Expanse_Tracker_Web.git'
-            },
-
+            }
         ];
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -558,7 +577,10 @@
                     <img src="${sanitizeInput(project.thumbnail)}" alt="${sanitizeInput(project.name)}" loading="lazy">
                     <h3>${sanitizeInput(project.name)}</h3>
                     <p>${sanitizeInput(project.description)}</p>
-                    <a href="${sanitizeInput(project.github)}" class="btn" target="_blank" aria-label="Lihat ${sanitizeInput(project.name)} di GitHub">Lihat di GitHub</a>
+                    <div style="display: flex; gap: 10px; justify-content: center; margin-top: auto; flex-wrap: wrap;">
+                        <a href="project-detail.html?id=${sanitizeInput(project.id)}" class="btn" style="background: transparent; border: 2px solid var(--primary); color: var(--primary); padding: 8px 18px;" aria-label="Lihat Detail ${sanitizeInput(project.name)}">Lihat Detail</a>
+                        <a href="${sanitizeInput(project.github)}" class="btn" style="padding: 8px 18px;" target="_blank" aria-label="Lihat ${sanitizeInput(project.name)} di GitHub"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
                 `;
                 projectsGrid.appendChild(projectCard);
             });

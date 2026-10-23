@@ -605,9 +605,9 @@
             <div class="footer-content glass-card">
                 <div class="footer-brand">
                     <a href="index.html" class="logo" aria-label="Yehezkiel Ruben Logo">YR</a>
-                    <p>Mahasiswa Informatika yang bersemangat menjelajahi pengembangan web.</p>
+                    <p>IT Support & System Specialist | Lulusan S1 Informatika Universitas Bina Sarana Informatika.</p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/yehezkiel-ruben-0928a22a8" class="social-link"
+                        <a href="https://www.linkedin.com/in/yehezkiel-ruben-857508249" class="social-link"
                             data-tooltip="LinkedIn" target="_blank" aria-label="LinkedIn"><i
                                 class="fab fa-linkedin"></i></a>
                         <a href="https://github.com/Yehezkie" class="social-link" data-tooltip="GitHub" target="_blank"
@@ -646,35 +646,71 @@
 
         const projectsData = [
             {
+                id: 'pediafood-japan',
+                name: 'PediaFood Japan – Cross-Border E-Commerce',
+                subtitle: 'Platform E-Commerce B2C Produk Halal & Asia Lintas Negara (Jepang)',
+                description: 'Platform e-commerce B2C berskala internasional yang melayani pengiriman produk di seluruh prefektur Jepang dengan sistem zonasi pengiriman logistik dinamis dan integrasi API pihak ketiga.',
+                overview: 'PediaFood Japan adalah platform e-commerce yang dirancang untuk melayani pasar cross-border di Jepang. Sistem ini mengintegrasikan Zip Cloud API untuk auto-complete alamat Jepang instan berdasarkan 7 digit kode pos, memvalidasi prefektur, kota, dan distrik secara real-time. Memiliki mesin perhitungan ongkos kirim dinamis yang memisahkan regulasi logistik muatan kering (dry cargo) dan makanan beku/chilled berdasarkan zonasi pulau/prefektur. Dilengkapi alur autentikasi Google OAuth 2.0 untuk checkout cepat, sinkronisasi cart multi-device, serta diamankan menggunakan Cloudflare WAF dan rate limiting untuk mitigasi scraping serta optimasi CDN traffic lintas negara.',
+                technologies: ['PHP', 'MySQL', 'Cloudflare WAF', 'Zip Cloud API', 'Google OAuth 2.0', 'REST API', 'JavaScript', 'Bootstrap'],
+                github: 'https://github.com/Yehezkie',
+                screenshots: [
+                    { src: 'assets/pediafood/pediafood-logo.png', caption: 'Logo Resmi & Identitas Platform PediaFood Japan' }
+                ]
+            },
+            {
+                id: 'crm-rfq',
+                name: 'Sistem CRM & Manajemen Penawaran (RFQ)',
+                subtitle: 'Aplikasi Internal Otomatisasi Alur Penawaran Harga & Audit Penjualan',
+                description: 'Sistem internal enterprise untuk mengelola alur permintaan penawaran harga (Request for Quotation / RFQ), isolasi basis data pelanggan per sales, validasi diskon bertingkat, dan audit log pelacakan dokumen.',
+                overview: 'Sistem CRM RFQ dibangun untuk mendisiplinkan operasional penawaran harga tim sales kepada klien perusahaan. Fitur mencakup manajemen portofolio pelanggan dengan pemisahan database per representatif sales, generator dokumen penawaran harga otomatis dengan kalkulasi margin/diskon, alur persetujuan validasi berjenjang (approval workflow) jika diskon melewati batas kewenangan, serta audit log lengkap untuk memantau setiap riwayat pembuatan, modifikasi, dan status persetujuan dokumen quotation secara transparan.',
+                technologies: ['PHP', 'MySQL', 'Audit Trail', 'Workflow Approval', 'HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
+                github: 'https://github.com/Yehezkie',
+                screenshots: [
+                    { src: 'assets/crm/quotation-rfq.png', caption: 'Pratinjau Format Dokumen Penawaran Harga (Quotation RFQ)' }
+                ]
+            },
+            {
+                id: 'inventaris-aset',
+                name: 'Sistem Inventaris Aset Multi-Cabang',
+                subtitle: 'Aplikasi Mobile Manajemen Aset Kantor Berbasis Offline-First',
+                description: 'Aplikasi mobile untuk pencatatan, inspeksi fisik, dan pelacakan mutasi aset IT kantor lintas lokasi dengan sinkronisasi database offline-first.',
+                overview: 'Sistem Manajemen Inventaris Aset Multi-Cabang mengatasi kendala pencatatan aset di lokasi dengan koneksi internet terbatas. Dibangun menggunakan Flutter dengan penyimpanan lokal SQLite, memungkinkan staf IT melakukan inventarisasi aset, pemindaian label barang, verifikasi kondisi perangkat, dan pengesahan Berita Acara Serah Terima (BAST) tanpa ketergantungan sinyal internet secara terus-menerus. Saat perangkat terhubung ke internet, sinkronisasi otomatis akan menyelaraskan data lokal ke basis data cloud server secara aman.',
+                technologies: ['Flutter', 'Dart', 'SQLite', 'Offline-First Architecture', 'REST API', 'JSON'],
+                github: 'https://github.com/Yehezkie/Inventaris_multi-cabang',
+                screenshots: [
+                    { src: 'assets/inventaris/bast-inventaris.png', caption: 'Pratinjau Aktivitas & Pengesahan BAST Inventaris Aset' }
+                ]
+            },
+            {
                 id: 'digital-library',
-                name: 'Perpustakaan Digital',
-                subtitle: 'Manajemen Perpustakaan Sekolah',
+                name: 'Perpustakaan Digital SMPN 7 Bekasi',
+                subtitle: 'Sistem Manajemen Katalog & Sirkulasi Perpustakaan Sekolah',
                 description: 'Aplikasi manajemen perpustakaan sekolah dengan klasifikasi buku (DDC), pengelolaan data anggota, pelacakan peminjaman 3 hari, pengingat WhatsApp, dan dasbor dengan statistik serta ekspor CSV.',
-                overview: 'Sistem Perpustakaan Digital Sekolah adalah solusi otomatis dan efisien untuk manajemen perpustakaan sekolah. Fitur termasuk pengelolaan koleksi buku dengan Klasifikasi Desimal Dewey (DDC), pelacakan salinan unik, dan pengelolaan data anggota dengan verifikasi data siswa. Sistem ini mendukung batas peminjaman 3 hari, pelacakan sirkulasi secara real-time, dan pengingat pengembalian melalui WhatsApp. Dilengkapi dengan dasbor intuitif dan laporan aktivitas perpustakaan, dibangun menggunakan PHP, MySQL, Bootstrap 5, Chart.js, dan API WhatsApp. Sistem ini aman dan ramah pengguna, menyederhanakan katalogisasi digital dan sirkulasi tanpa denda.',
-                technologies: ['PHP', 'Laravel', 'MySQL', 'HTML', 'CSS', 'JavaScript', 'Bootstrap'],
+                overview: 'Sistem Perpustakaan Digital Sekolah adalah solusi otomatis dan efisien untuk manajemen perpustakaan sekolah. Fitur termasuk pengelolaan koleksi buku dengan Klasifikasi Desimal Dewey (DDC), pelacakan salinan unik, dan pengelolaan data anggota dengan verifikasi data siswa. Sistem ini mendukung batas peminjaman 3 hari, pelacakan sirkulasi secara real-time, dan pengingat pengembalian otomatis melalui integrasi WhatsApp API. Dilengkapi dengan dasbor intuitif dan laporan aktivitas perpustakaan menggunakan PHP, MySQL, Bootstrap, dan Chart.js.',
+                technologies: ['PHP', 'MySQL', 'WhatsApp API', 'Dewey Decimal Classification (DDC)', 'HTML', 'CSS', 'JavaScript', 'Bootstrap'],
                 github: 'https://github.com/Yehezkie/perpustakaan_digital',
                 screenshots: [
-                    { src: 'assets/perpustakaan-digital/dahboard.png', caption: 'Dasbor' },
-                    { src: 'assets/perpustakaan-digital/tampilan login.jpg', caption: 'Login' },
-                    { src: 'assets/perpustakaan-digital/master Data - Data Siswa.png', caption: 'Data Siswa' },
-                    { src: 'assets/perpustakaan-digital/Master Data - Data Buku.png', caption: 'Data Buku' },
-                    { src: 'assets/perpustakaan-digital/transaksi.png', caption: 'Transaksi' },
-                    { src: 'assets/perpustakaan-digital/laporan.png', caption: 'Laporan' }
+                    { src: 'assets/perpustakaan-digital/dahboard.png', caption: 'Dasbor Statistik Perpustakaan' },
+                    { src: 'assets/perpustakaan-digital/tampilan login.jpg', caption: 'Halaman Login Sistem' },
+                    { src: 'assets/perpustakaan-digital/Master Data - Data SIswa.png', caption: 'Master Data Siswa' },
+                    { src: 'assets/perpustakaan-digital/Master Data - Data Buku.png', caption: 'Master Data Buku (Klasifikasi DDC)' },
+                    { src: 'assets/perpustakaan-digital/Transaksi.png', caption: 'Menu Transaksi Sirkulasi Peminjaman' },
+                    { src: 'assets/perpustakaan-digital/Laporan.png', caption: 'Rekapitulasi Laporan & Ekspor CSV' }
                 ]
             },
             {
                 id: 'Expense-Tracker',
                 name: 'Aplikasi Web Pelacak Pengeluaran',
-                subtitle: 'Alat Manajemen Keuangan yang Sederhana dan Ramah Pengguna',
-                description: 'Aplikasi berbasis web yang dirancang untuk membantu pengguna melacak pendapatan dan pengeluaran, mengelola transaksi, dan mengekspor data keuangan dalam format CSV. Aplikasi ini menyediakan antarmuka yang bersih untuk menambah, melihat, dan menghapus transaksi, serta ringkasan saldo, pendapatan, dan pengeluaran.',
-                overview: 'Aplikasi Web Pelacak Pengeluaran adalah alat ringan yang dibuat untuk membantu pengguna mengelola keuangan pribadi mereka. Aplikasi ini memungkinkan pengguna untuk mencatat transaksi (pendapatan dan pengeluaran), melihat ringkasan status keuangan mereka, dan mengekspor data transaksi untuk analisis lebih lanjut. Aplikasi ini memiliki desain responsif, antarmuka yang ramah pengguna, dan fungsi CRUD (Create, Read, Update, Delete) dasar untuk pengelolaan transaksi. Sistem ini menghitung total saldo, pendapatan, dan pengeluaran secara dinamis dan mendukung ekspor data dalam format CSV untuk keperluan pelaporan.',
-                technologies: ['Bootstrap', 'MySQL', 'PHP', 'HTML', 'CSS', 'JavaScript'],
+                subtitle: 'Alat Manajemen Arus Kas Keuangan Sederhana dan Responsif',
+                description: 'Aplikasi berbasis web yang dirancang untuk membantu pengguna melacak pendapatan dan pengeluaran, mengelola transaksi, dan mengekspor data keuangan dalam format CSV.',
+                overview: 'Aplikasi Web Pelacak Pengeluaran adalah alat manajemen arus kas pribadi yang bersih dan responsif. Memungkinkan pengguna mencatat transaksi pendapatan dan pengeluaran secara real-time, menampilkan saldo dinamis, serta mengkategorikan pos pengeluaran harian. Sistem ini dilengkapi fungsionalitas CRUD lengkap serta ekspor data ke file CSV untuk analisis anggaran lanjutan.',
+                technologies: ['PHP', 'MySQL', 'JavaScript', 'HTML5', 'CSS3', 'Bootstrap'],
                 github: 'https://github.com/Yehezkie/Expanse_Tracker_Web.git',
                 screenshots: [
-                    { src: 'assets/expense tracker/Halaman Utama.png', caption: 'Halaman Utama' },
-                    { src: 'assets/expense tracker/Halaman transaksi.png', caption: 'Halaman Transaksi' }
+                    { src: 'assets/expense tracker/Halaman Utama.png', caption: 'Halaman Utama & Ringkasan Saldo' },
+                    { src: 'assets/expense tracker/Halaman transaksi.png', caption: 'Halaman Manajemen Transaksi' }
                 ]
-            },
+            }
         ];
 
         document.addEventListener('DOMContentLoaded', () => {
