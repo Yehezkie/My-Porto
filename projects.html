@@ -194,39 +194,171 @@
             color: var(--text);
         }
 
+        
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
             gap: 30px;
         }
 
         .project-card {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
+            border-radius: 18px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 20px;
+            text-align: left;
         }
 
-        .project-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.12);
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .project-img-container {
+            position: relative;
+            overflow: hidden;
             border-radius: 12px;
-            margin-bottom: 20px;
-            background: url('assets/images/fallback-project.jpg') no-repeat center/cover;
+            aspect-ratio: 16 / 9;
+            background: #0f172a;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
         }
 
-        .project-card h3 {
-            font-size: 1.5rem;
-            color: var(--dark);
+        .project-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.04);
+        }
+
+        .project-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            z-index: 2;
+        }
+
+        .badge-security { background: rgba(30, 58, 138, 0.85); color: #93c5fd; border: 1px solid rgba(147, 197, 253, 0.4); }
+        .badge-ecommerce { background: rgba(136, 19, 55, 0.85); color: #fecdd3; border: 1px solid rgba(254, 205, 211, 0.4); }
+        .badge-crm { background: rgba(49, 46, 129, 0.85); color: #c7d2fe; border: 1px solid rgba(199, 210, 254, 0.4); }
+        .badge-inventory { background: rgba(19, 78, 74, 0.85); color: #99f6e4; border: 1px solid rgba(153, 246, 228, 0.4); }
+        .badge-infra { background: rgba(124, 45, 18, 0.85); color: #fed7aa; border: 1px solid rgba(254, 215, 170, 0.4); }
+
+        .project-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 20px 4px 4px 4px;
+        }
+
+        .project-content h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0f172a;
             margin-bottom: 10px;
+            line-height: 1.35;
         }
 
-        .project-card p {
-            color: var(--text-light);
-            margin-bottom: 20px;
-            font-size: 1rem;
+        .project-content p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex: 1;
         }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background: rgba(79, 70, 229, 0.08);
+            color: #4338ca;
+            border: 1px solid rgba(79, 70, 229, 0.15);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .btn-detail {
+            flex: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: var(--primary);
+            color: white !important;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+        }
+
+        .btn-detail:hover {
+            background: #4338ca;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(79, 70, 229, 0.35);
+        }
+
+        .btn-github {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: rgba(15, 23, 42, 0.06);
+            color: #1e293b !important;
+            border: 1px solid rgba(15, 23, 42, 0.15);
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.25s ease;
+        }
+
+        .btn-github:hover {
+            background: #0f172a;
+            color: white !important;
+            border-color: #0f172a;
+            transform: translateY(-2px);
+        }
+
 
         .back-to-top {
             position: fixed;
@@ -534,36 +666,56 @@
             {
                 id: 'cctv-access-control',
                 name: 'Supervisi & Implementasi Sistem Keamanan Korporat',
-                description: 'Bertindak sebagai Technical Site PIC: survei titik penempatan perangkat, penyusunan BoQ, pengawasan vendor instalasi CCTV & Biometric Access Control, inspeksi jalur kabel, verifikasi pengujian fungsi sensor, dan BAST.',
-                thumbnail: 'assets/cctv-access/access-door-biometric.jpg',
+                category: 'Physical Security PIC',
+                badgeClass: 'badge-security',
+                badgeIcon: 'fa-shield-alt',
+                description: 'Supervisi teknis (PIC) instalasi CCTV (Analog, IP Camera, DVR/NVR) dan Biometric Access Control Door (RFID, Fingerprint, Face Recognition). Meliputi survei lapangan, BoQ, pengawasan vendor, verifikasi uji fungsi sensor, dan BAST.',
+                thumbnail: 'assets/cctv-access/cctv-showcase.png',
+                tags: ['CCTV & NVR', 'Access Control Door', 'BoQ & MoM', 'QC Checklist', 'BAST'],
                 github: 'https://github.com/Yehezkie'
             },
             {
                 id: 'pediafood-japan',
                 name: 'PediaFood - Cross-Border E-Commerce Platform (Jepang)',
-                description: 'Platform e-commerce grosir & ritel untuk pasar Jepang end-to-end: integrasi Zip Cloud API kode pos 7-digit Jepang, kalkulasi ongkos kirim dinamis (kargo kering vs beku/chilled), Google OAuth 2.0, dan Cloudflare WAF.',
-                thumbnail: 'assets/pediafood/pediafood-logo.png',
+                category: 'E-Commerce B2C',
+                badgeClass: 'badge-ecommerce',
+                badgeIcon: 'fa-shopping-cart',
+                description: 'Platform e-commerce grosir & ritel untuk pasar Jepang end-to-end: integrasi Zip Cloud API kode pos 7-digit Jepang, kalkulasi ongkos kirim dinamis (kargo kering vs beku/chilled), login Google OAuth 2.0, dan Cloudflare WAF.',
+                thumbnail: 'assets/pediafood/pediafood-showcase.png',
+                tags: ['PHP', 'MySQL', 'Google OAuth 2.0', 'Cloudflare WAF', 'Zip Cloud API', 'Linux'],
                 github: 'https://github.com/Yehezkie'
             },
             {
                 id: 'crm-rfq',
                 name: 'CRM & Request for Quotation (RFQ) System',
-                description: 'Sistem CRM RFQ untuk pengelolaan penawaran harga sales ke admin dan leader. Dilengkapi pembatasan hak akses database per sales, form kalkulasi margin & HPP, alur persetujuan diskon berjenjang, dan audit trail.',
-                thumbnail: 'assets/crm/quotation-rfq.png',
+                category: 'Enterprise SaaS',
+                badgeClass: 'badge-crm',
+                badgeIcon: 'fa-briefcase',
+                description: 'Sistem CRM RFQ untuk alur penawaran harga sales ke admin dan leader. Dilengkapi pembatasan hak akses database per sales, form kalkulasi margin & HPP, alur persetujuan diskon berjenjang, audit trail, dan DomPDF dwibahasa (ID-JP).',
+                thumbnail: 'assets/crm/crm-showcase.png',
+                tags: ['Laravel 11', 'MySQL', 'Workflow Approval', 'Audit Trail', 'Tailwind CSS', 'DomPDF'],
                 github: 'https://github.com/Yehezkie'
             },
             {
                 id: 'offline-inventory',
                 name: 'Offline-First IT Asset Management & Inventory System',
-                description: 'Aplikasi mobile manajemen aset IT dengan arsitektur Offline-First menggunakan SQLite lokal untuk audit fisik perangkat di gudang tanpa internet, bulk actions, dan parser Excel untuk sinkronisasi massal.',
-                thumbnail: 'assets/inventaris/bast-inventaris.png',
+                category: 'Mobile & Cloud',
+                badgeClass: 'badge-inventory',
+                badgeIcon: 'fa-mobile-alt',
+                description: 'Aplikasi mobile manajemen aset IT berarsitektur Offline-First menggunakan SQLite lokal untuk audit fisik perangkat di gudang tanpa internet, bulk actions, dan parser data Excel untuk sinkronisasi massal.',
+                thumbnail: 'assets/inventaris/inventaris-showcase.png',
+                tags: ['Flutter', 'Dart', 'SQLite Lokal', 'Offline-First', 'Excel Parsing', 'Android'],
                 github: 'https://github.com/Yehezkie/Inventaris_multi-cabang'
             },
             {
                 id: 'server-network-security',
                 name: 'Infrastruktur Jaringan, Server Hardening & Security Handling',
-                description: 'Pembersihan tuntas injeksi script berbahaya (malware PHP), konfigurasi Cloudflare Edge Security (custom WAF rules, SSL Full Strict), penataan jaringan LAN, dan pemeliharaan server dengan zero-downtime.',
-                thumbnail: 'assets/security-server/server-infrastructure.jpg',
+                category: 'DevSecOps & Infra',
+                badgeClass: 'badge-infra',
+                badgeIcon: 'fa-server',
+                description: 'Pembersihan tuntas injeksi script berbahaya (malware PHP), konfigurasi Cloudflare Edge Security (custom WAF rules, SSL Full Strict, bot mitigation), penataan jaringan LAN patch panel, dan pemeliharaan server zero-downtime.',
+                thumbnail: 'assets/security-server/security-showcase.png',
+                tags: ['LAN Networking', 'Cloudflare WAF', 'Linux Server', 'Malware Cleanup', 'cPanel'],
                 github: 'https://github.com/Yehezkie'
             }
         ];
@@ -572,14 +724,24 @@
             const projectsGrid = document.querySelector('.projects-grid');
             projectsData.forEach(project => {
                 const projectCard = document.createElement('div');
-                projectCard.className = 'project-card glass-card animate';
+                projectCard.className = 'project-card animate';
                 projectCard.innerHTML = `
-                    <img src="${sanitizeInput(project.thumbnail)}" alt="${sanitizeInput(project.name)}" loading="lazy">
-                    <h3>${sanitizeInput(project.name)}</h3>
-                    <p>${sanitizeInput(project.description)}</p>
-                    <div style="display: flex; gap: 10px; justify-content: center; margin-top: auto; flex-wrap: wrap;">
-                        <a href="project-detail.html?id=${sanitizeInput(project.id)}" class="btn" style="background: transparent; border: 2px solid var(--primary); color: var(--primary); padding: 8px 18px;" aria-label="Lihat Detail ${sanitizeInput(project.name)}">Lihat Detail</a>
-                        <a href="${sanitizeInput(project.github)}" class="btn" style="padding: 8px 18px;" target="_blank" aria-label="Lihat ${sanitizeInput(project.name)} di GitHub"><i class="fab fa-github"></i> GitHub</a>
+                    <div class="project-img-container">
+                        <span class="project-badge ${project.badgeClass}">
+                            <i class="fas ${project.badgeIcon}"></i> ${sanitizeInput(project.category)}
+                        </span>
+                        <img src="${sanitizeInput(project.thumbnail)}" alt="${sanitizeInput(project.name)}" class="project-img" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>${sanitizeInput(project.name)}</h3>
+                        <p>${sanitizeInput(project.description)}</p>
+                        <div class="tech-tags">
+                            ${project.tags.map(tag => `<span class="tech-tag">${sanitizeInput(tag)}</span>`).join('')}
+                        </div>
+                        <div class="project-actions">
+                            <a href="project-detail.html?id=${sanitizeInput(project.id)}" class="btn-detail" aria-label="Lihat Detail ${sanitizeInput(project.name)}"><i class="fas fa-arrow-right"></i> Detail Proyek</a>
+                            <a href="${sanitizeInput(project.github)}" target="_blank" class="btn-github" aria-label="Lihat di GitHub"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
                     </div>
                 `;
                 projectsGrid.appendChild(projectCard);

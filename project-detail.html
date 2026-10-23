@@ -546,6 +546,73 @@
         .animate {
             opacity: 0;
         }
+    
+        .project-hero-banner {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+            margin-bottom: 35px;
+            background: #0f172a;
+        }
+
+        .project-hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-item {
+            cursor: pointer;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            background: #0f172a;
+            aspect-ratio: 16 / 10;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .meta-card {
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .meta-card h5 {
+            color: var(--primary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .meta-card p {
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
     </style>
 </head>
 
@@ -649,36 +716,57 @@
                 id: 'cctv-access-control',
                 name: 'Supervisi & Implementasi Sistem Keamanan Korporat',
                 subtitle: 'Supervisi Teknis (Technical Site PIC) CCTV & Biometric Access Control Door',
+                heroBanner: 'assets/cctv-access/cctv-showcase.png',
+                role: 'Technical Site PIC & Supervisor',
+                organization: 'PT Pedia Teknologi Indonesia / Vendor Rekanan',
+                status: 'Completed & BAST Handover',
+                category: 'Physical Security & Infrastructure',
                 description: 'Memimpin survei teknis lapangan, penyusunan Bill of Quantity (BoQ), pengawasan instalasi vendor, verifikasi fungsi sensor, dan penyusunan Berita Acara Serah Terima (BAST).',
                 overview: 'Sebagai Person in Charge (PIC) teknis lapangan, bertanggung jawab penuh dalam mengawasi pekerjaan vendor dan subkontraktor pada instalasi sistem keamanan korporat di berbagai fasilitas klien bisnis. Lingkup kerja meliputi survei pemetaan titik kamera dan perangkat akses, perhitungan kebutuhan material (BoQ), penyusunan Minutes of Meeting (MoM), inspeksi penarikan kabel UTP/koaksial dan pipa konduit, serta pengujian Quality Control (QC) untuk fungsi sensor RFID, pemindai sidik jari, pengenalan wajah (face recognition), dan perekaman NVR/DVR sebelum serah terima pekerjaan (BAST).',
-                technologies: ['CCTV (IP Camera & Analog)', 'DVR / NVR', 'Access Control Door (RFID, Fingerprint, Face Recognition)', 'Technical Site Survey', 'Bill of Quantity (BoQ)', 'Quality Control (QC)', 'Berita Acara Serah Terima (BAST)'],
+                technologies: ['CCTV (IP Camera & Analog)', 'DVR / NVR Multi-Channel', 'Access Control Door (RFID, Fingerprint, Face Recognition)', 'Technical Site Survey', 'Bill of Quantity (BoQ)', 'Quality Control (QC)', 'Berita Acara Serah Terima (BAST)'],
                 github: 'https://github.com/Yehezkie',
                 screenshots: [
-                    { src: 'assets/cctv-access/access-door-biometric.jpg', caption: 'Perangkat Terminal Biometrik & Access Control Door' },
-                    { src: 'assets/cctv-access/cctv-poe-switch.png', caption: 'Infrastruktur PoE Switch & Jaringan CCTV Hikvision' }
+                    { src: 'assets/cctv-access/cctv-showcase.png', caption: 'Surveillance & Access Control Architecture (Site PIC)' },
+                    { src: 'assets/cctv-access/access-door-biometric.jpg', caption: 'Terminal Biometrik & Sensor Access Control Door' },
+                    { src: 'assets/cctv-access/cctv-poe-switch.png', caption: 'Hikvision PoE Switch & Infrastruktur Jaringan CCTV' }
                 ]
             },
             {
                 id: 'pediafood-japan',
                 name: 'PediaFood - Cross-Border E-Commerce Platform (Jepang)',
                 subtitle: 'Platform E-Commerce B2C Produk Halal & Asia Lintas Negara (Jepang)',
+                heroBanner: 'assets/pediafood/pediafood-showcase.png',
+                role: 'Web Developer & System Support',
+                organization: 'PT Pedia Teknologi Indonesia',
+                status: 'Production Live',
+                category: 'Cross-Border E-Commerce',
                 description: 'Platform e-commerce grosir & ritel untuk pasar Jepang end-to-end: integrasi Zip Cloud API kode pos 7-digit Jepang, kalkulasi ongkos kirim dinamis, login Google OAuth 2.0, dan Cloudflare WAF.',
                 overview: 'Membangun dan mengelola platform e-commerce grosir & ritel untuk pasar Jepang secara menyeluruh: pemodelan basis data, alur transaksi, manajemen inventori, dan pemeliharaan server. Mengintegrasikan sistem auto-complete kode pos 7-digit Jepang (Zip Cloud API) untuk pengisian alamat otomatis yang akurat. Menerapkan mesin perhitungan ongkos kirim dinamis berbasis bobot, kubikasi, dan kategori temperatur kargo (kargo kering vs kargo beku/chilled) sesuai regulasi logistik lokal Jepang. Mengimplementasikan autentikasi Google OAuth 2.0 dengan sinkronisasi keranjang belanja multi-device serta konfigurasi Cloudflare WAF untuk keamanan dan optimasi CDN lintas negara.',
                 technologies: ['PHP', 'MySQL', 'JavaScript', 'Google OAuth 2.0', 'Cloudflare WAF', 'Zip Cloud API', 'Linux Server', 'Bootstrap'],
                 github: 'https://github.com/Yehezkie',
                 screenshots: [
-                    { src: 'assets/pediafood/pediafood-logo.png', caption: 'Logo Resmi & Identitas Platform E-Commerce PediaFood Japan' }
+                    { src: 'assets/pediafood/pediafood-showcase.png', caption: 'PediaFood Japan E-Commerce Showcase & Features' },
+                    { src: 'assets/pediafood/pediafood-store-preview.jpg', caption: 'Tampilan Mobile Responsive Store Catalog & Checkout' },
+                    { src: 'assets/pediafood/pediafood-logo.png', caption: 'Logo Resmi & Identitas Platform PediaFood Japan' }
                 ]
             },
             {
                 id: 'crm-rfq',
                 name: 'CRM & Request for Quotation (RFQ) System',
                 subtitle: 'Sistem Web Otomatisasi Alur Penawaran Harga & Manajemen Database Sales',
+                heroBanner: 'assets/crm/crm-showcase.png',
+                role: 'Internal System Developer',
+                organization: 'PT Pedia Teknologi Indonesia',
+                status: 'Enterprise Internal System',
+                category: 'Enterprise SaaS & ERP',
                 description: 'Sistem CRM RFQ untuk pengelolaan alur penawaran harga dari tim Sales ke Admin dan Leader dengan pembatasan hak akses, validasi diskon bertingkat, dan audit trail.',
                 overview: 'Membangun sistem web CRM & Request for Quotation (RFQ) untuk mendisiplinkan operasional penawaran harga dari tim Sales kepada klien perusahaan. Menerapkan pembatasan hak akses data yang ketat di mana setiap Sales hanya dapat melihat dan mengelola database klien serta request penawaran miliknya. Menyediakan form kalkulasi harga terstruktur mencakup HPP, margin, ongkos kirim, dan biaya subkontraktor. Dilengkapi alur validasi persetujuan diskon berjenjang (approval workflow), audit trail lengkap untuk memantau setiap riwayat perubahan harga, serta generator PDF penawaran dwibahasa (Indonesia-Jepang) dengan proteksi informasi margin internal.',
                 technologies: ['Laravel 11', 'MySQL', 'Tailwind CSS', 'Alpine.js', 'DomPDF', 'AJAX', 'Workflow Approval', 'Audit Trail'],
                 github: 'https://github.com/Yehezkie',
                 screenshots: [
+                    { src: 'assets/crm/crm-showcase.png', caption: 'Showcase Dashboard Sales & RFQ System' },
+                    { src: 'assets/crm/crm-dashboard-sales.png', caption: 'Dasbor Utama Penjualan & Pemantauan Kuotasi Real-Time' },
+                    { src: 'assets/crm/crm-approval-workflow.png', caption: 'Alur Persetujuan Validasi Diskon oleh Leader' },
                     { src: 'assets/crm/quotation-rfq.png', caption: 'Format Dokumen Resmi Penawaran Harga (Quotation RFQ)' }
                 ]
             },
@@ -686,25 +774,39 @@
                 id: 'offline-inventory',
                 name: 'Offline-First IT Asset Management & Inventory System',
                 subtitle: 'Aplikasi Mobile Manajemen Aset IT Berbasis Offline-First',
+                heroBanner: 'assets/inventaris/inventaris-showcase.png',
+                role: 'IT Tools Developer',
+                organization: 'Proyek Tugas Akhir / PT Puradelta Lestari Tbk',
+                status: 'Verified & Deployed',
+                category: 'Mobile & Cloud Inventory',
                 description: 'Aplikasi mobile untuk pencatatan, inspeksi fisik, dan pelacakan mutasi aset IT kantor lintas lokasi dengan sinkronisasi database offline-first menggunakan SQLite lokal.',
                 overview: 'Merancang dan membangun aplikasi mobile manajemen aset IT dengan arsitektur Offline-First menggunakan SQLite lokal untuk mempermudah audit fisik perangkat di gudang dan lokasi lapangan tanpa ketergantungan koneksi internet. Mengembangkan fitur pemrosesan data massal (bulk selection, bulk delete, filter multi-kategori), pencatatan nomor seri perangkat, verifikasi kondisi fisik, dan modul parser Excel untuk sinkronisasi data aset massal secara cepat dan akurat.',
                 technologies: ['Flutter', 'Dart', 'SQLite Lokal', 'Offline-First Architecture', 'Excel Data Parsing', 'Android'],
                 github: 'https://github.com/Yehezkie/Inventaris_multi-cabang',
                 screenshots: [
-                    { src: 'assets/inventaris/bast-inventaris.png', caption: 'Pratinjau Aktivitas & Pengesahan BAST Inventaris Aset' }
+                    { src: 'assets/inventaris/inventaris-showcase.png', caption: 'Showcase Offline-First Asset Management System' },
+                    { src: 'assets/inventaris/inventaris-dashboard.png', caption: 'Dasbor Statistik & Rekapitulasi Aset Perangkat' },
+                    { src: 'assets/inventaris/inventaris-daftar-aset.png', caption: 'Tabel Manajemen Data Aset & Riwayat Kondisi' },
+                    { src: 'assets/inventaris/bast-inventaris.png', caption: 'Pratinjau Aktivitas & Pengesahan Dokumen BAST' }
                 ]
             },
             {
                 id: 'server-network-security',
                 name: 'Infrastruktur Jaringan, Server Hardening & Security Handling',
                 subtitle: 'Pemeliharaan Infrastruktur LAN, Hardening Server & Mitigasi Keamanan Siber',
+                heroBanner: 'assets/security-server/security-showcase.png',
+                role: 'IT Support & Security Engineer',
+                organization: 'PT Pedia Teknologi Indonesia',
+                status: 'Operational Maintenance',
+                category: 'DevSecOps, Server & Network',
                 description: 'Penanganan investigasi forensik dan pembersihan script berbahaya (malware PHP), konfigurasi Cloudflare Edge Security (WAF rules, SSL Full Strict), serta pengkabelan LAN.',
                 overview: 'Melakukan investigasi forensik dan pembersihan tuntas injeksi script berbahaya (malware/backdoor PHP) pada lingkungan server produksi serta menutup celah keamanan sistem. Mengonfigurasi Cloudflare Edge Security mencakup custom WAF rules, mitigasi bot, dan SSL/TLS Full Strict untuk menjamin ketersediaan layanan website dengan zero-downtime. Di sisi infrastruktur lokal, melakukan perapihan dan terminasi kabel LAN (crimping RJ-45) pada patch panel serta pemeliharaan konektivitas jaringan kantor.',
                 technologies: ['LAN Networking', 'Crimping UTP RJ-45', 'Cloudflare WAF', 'Linux Server', 'cPanel Hosting', 'PHP Malware Cleanup', 'SSL/TLS Full Strict'],
                 github: 'https://github.com/Yehezkie',
                 screenshots: [
-                    { src: 'assets/security-server/server-infrastructure.jpg', caption: 'Infrastruktur Server & Hardening Sistem' },
-                    { src: 'assets/security-server/storage-surveillance.jpg', caption: 'Media Penyimpanan & Harddisk Surveillance' }
+                    { src: 'assets/security-server/security-showcase.png', caption: 'Showcase Terminal Security Audit & Edge Hardening' },
+                    { src: 'assets/security-server/server-infrastructure.jpg', caption: 'Infrastruktur Server Fisik & Network Rack' },
+                    { src: 'assets/security-server/storage-surveillance.jpg', caption: 'Media Penyimpanan Enterprise & Harddisk Surveillance' }
                 ]
             }
         ];
@@ -759,6 +861,33 @@
                 document.getElementById('project-subtitle').textContent = sanitizeInput(project.subtitle);
                 document.getElementById('project-name').textContent = sanitizeInput(project.name);
                 document.getElementById('project-description').textContent = sanitizeInput(project.description);
+                
+                // Insert Meta Grid
+                const headerElem = document.querySelector('.project-header');
+                const existingMeta = document.getElementById('project-meta-grid');
+                if (!existingMeta) {
+                    const metaGrid = document.createElement('div');
+                    metaGrid.id = 'project-meta-grid';
+                    metaGrid.className = 'project-meta-grid';
+                    metaGrid.innerHTML = `
+                        <div class="meta-card"><h5>Peran</h5><p>${sanitizeInput(project.role || 'System Engineer')}</p></div>
+                        <div class="meta-card"><h5>Kategori</h5><p>${sanitizeInput(project.category || 'IT Infrastructure')}</p></div>
+                        <div class="meta-card"><h5>Organisasi / Klien</h5><p>${sanitizeInput(project.organization || 'Corporate Project')}</p></div>
+                        <div class="meta-card"><h5>Status</h5><p>${sanitizeInput(project.status || 'Active')}</p></div>
+                    `;
+                    headerElem.appendChild(metaGrid);
+                }
+
+                // Insert Hero Showcase Banner before gallery
+                const galleryElem = document.querySelector('.project-gallery');
+                const existingHero = document.getElementById('project-hero-banner');
+                if (!existingHero && project.heroBanner) {
+                    const heroDiv = document.createElement('div');
+                    heroDiv.id = 'project-hero-banner';
+                    heroDiv.className = 'project-hero-banner';
+                    heroDiv.innerHTML = `<img src="${sanitizeInput(project.heroBanner)}" alt="${sanitizeInput(project.name)} Showcase" loading="lazy">`;
+                    galleryElem.parentNode.insertBefore(heroDiv, galleryElem);
+                }
                 document.getElementById('project-overview').textContent = sanitizeInput(project.overview);
                 document.getElementById('github-link').href = sanitizeInput(project.github);
 
